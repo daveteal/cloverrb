@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cloverrb
   class Employee < Client
     def initialize(token, merchant_code)
@@ -5,7 +7,7 @@ module Cloverrb
       @merchant_code = merchant_code
     end
 
-    def all(role=nil)
+    def all(role = nil)
       url = "/merchants/#{@merchant_code}/employees"
       url += "?filter=role=#{role}" if role
       get(@token, url)

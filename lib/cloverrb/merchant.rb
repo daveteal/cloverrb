@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 module Cloverrb
   class Merchant < Client
     def initialize(token)
       @token = token
-    end 
+    end
 
     def find(merchant_id)
       url = "/merchants/#{merchant_id}?expand=owner"
-      get(@token, url) 
+      get(@token, url)
     end
   end
 end

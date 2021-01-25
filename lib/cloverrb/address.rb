@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cloverrb
   class Address < Client
     def initialize(token, merchant_code)

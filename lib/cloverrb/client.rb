@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module Cloverrb
   class Client
-    BASE_URL = "https://api.clover.com/v3"
-    AUTH_URL = "https://clover.com/oauth/token"
+    BASE_URL = 'https://api.clover.com/v3'
+    AUTH_URL = 'https://clover.com/oauth/token'
 
     def get(token, path)
       HTTParty.get(BASE_URL + path, headers: build_headers(token)).parsed_response
@@ -31,15 +33,15 @@ module Cloverrb
     private
 
     def build_headers(token)
-      { "Authorization" => "Bearer #{token}"}
-    end 
+      { 'Authorization' => "Bearer #{token}" }
+    end
 
     def self.build_query(client_id, code, app_secret)
       {
-        "client_id" => client_id,
-        "client_secret" => app_secret,
-        "code" => code
+        'client_id' => client_id,
+        'client_secret' => app_secret,
+        'code' => code
       }
-    end 
+    end
   end
 end

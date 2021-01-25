@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cloverrb
   class LineItem < Client
     def initialize(token, order, merchant)
